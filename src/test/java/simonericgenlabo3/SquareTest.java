@@ -8,7 +8,8 @@ import static junit.framework.TestCase.*;
  */
 public class SquareTest {
     @Test
-    public void square() {
-
+    public void constructor() {
+        Square square = new Square("Square 1");
+        assertEquals("Square 1", square.getName());
     }
 }
