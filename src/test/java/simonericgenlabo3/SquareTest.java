@@ -13,4 +13,3 @@ public class SquareTest {
         assertEquals("Square 1", square.getName());
     }
 }
-
