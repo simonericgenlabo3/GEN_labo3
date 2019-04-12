@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class PieceTest {
 
     @BeforeAll
-    public void PieceCreationTest(){
+    public static void PieceCreationTest(){
         Piece piece = new Piece("test", new Square("1"));
         assertNotNull(piece);
     }
