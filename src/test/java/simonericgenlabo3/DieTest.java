@@ -1,11 +1,12 @@
 package simonericgenlabo3;
 
-import org.junit.Test;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DieTest {
 
@@ -16,7 +17,6 @@ public class DieTest {
         assertNotNull(die);
     }
 
-    @Test
     @RepeatedTest(100)
     public void faceValueMustBeBetween1and6 (){
         Die die = new Die();
