@@ -5,11 +5,13 @@ public class Player {
     private String name;
     private Piece piece;
     private Die[] dice;
+    private Board board;
 
-    Player(String name, Piece piece, Die dice []){
+    Player(String name, Piece piece, Die dice [], Board board){
         this.name = name;
         this.piece = piece;
         this.dice = dice;
+        this.board = board;
     }
 
     public void takeTurn(){
@@ -19,7 +21,7 @@ public class Player {
             fvTot += dice[i].getFaceValue();
         }
         Square oldLoc = piece.getLocation();
-        Square newLoc ;
+        Square newLoc = board.getSquare(oldLoc, fvTot);
         piece.setLocation(newLoc);
     }
 }
