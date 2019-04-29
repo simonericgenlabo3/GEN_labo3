@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class PieceTest {
 
     @BeforeAll
-    public static void PieceCreationTest(){
+    public static void pieceCreationTest(){
         Piece piece = new Piece("test", new Square("1"));
         assertNotNull(piece);
     }
 
     @Test
-    public void PieceGetSetLocationTest(){
+    public void pieceGetSetLocationTest(){
         Square square1 = new Square("1");
         Square square2 = new Square("2");
         Piece piece = new Piece("test", square1);
