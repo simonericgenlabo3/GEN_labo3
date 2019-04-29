@@ -21,7 +21,8 @@ public class SquareTest {
         assertTrue(square1.equals(square2));
     }
 
-    @Test void twoDifferentSquaresShouldNotBeEquals() {
+    @Test
+    void twoDifferentSquaresShouldNotBeEquals() {
         Square square1 = new Square("Square 1");
         Square square2 = new Square("Square 2");
 
