@@ -30,4 +30,12 @@ public class BoardTest {
             assertEquals("Square " + (repetitionInfo.getCurrentRepetition() - 1), square.getName());
         }
     }
+
+    @Test
+    public void getSquareShouldReturnCorrectSquare() {
+        assertEquals(new Square("Square 10"), board.getSquare(new Square("Square 4"), 6));
+
+        // exceeding 39
+        assertEquals(new Square("Go"), board.getSquare(new Square("39"), 1));
+    }
 }

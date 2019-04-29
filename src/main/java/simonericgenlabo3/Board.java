@@ -16,6 +16,6 @@ public class Board {
     }
 
     public Square getSquare(Square oldLoc, int fvTot) {
-        return squares.get(squares.indexOf(oldLoc) + fvTot);
+        return squares.get((squares.indexOf(oldLoc) + fvTot) % 40);
     }
 }
