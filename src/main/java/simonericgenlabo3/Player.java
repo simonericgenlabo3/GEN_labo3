@@ -25,4 +25,16 @@ public class Player {
         Square newLoc = board.getSquare(oldLoc, fvTot);
         piece.setLocation(newLoc);
     }
+
+    public int getNetWorth() {
+        return cash;
+    }
+
+    public void addCash(int cash) {
+        this.cash += cash;
+    }
+
+    public void reduceCash(int cash) {
+        this.cash -= cash;
+    }
 }
