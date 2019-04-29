@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Unit test for Board
  */
 public class BoardTest {
-    Square goSquare;
     Board board;
 
     @BeforeEach
@@ -19,23 +18,23 @@ public class BoardTest {
          board = new Board();
     }
 
-    @RepeatedTest(40)
+    @RepeatedTest(39)
     public void boardCreateSquares(RepetitionInfo repetitionInfo) {
-        Square square = board.getSquare(goSquare, repetitionInfo.getCurrentRepetition());
+        Square square = board.getSquare(new GoSquare(), repetitionInfo.getCurrentRepetition());
 
         // first square should be named "Go"
-        if(repetitionInfo.getCurrentRepetition() == 1) {
+        if(repetitionInfo.getCurrentRepetition() == 0) {
             assertEquals("Go", square.getName());
         } else {
-            assertEquals("Square " + (repetitionInfo.getCurrentRepetition() - 1), square.getName());
+            assertEquals("Square " + repetitionInfo.getCurrentRepetition(), square.getName());
         }
     }
 
     @Test
     public void getSquareShouldReturnCorrectSquare() {
-        assertEquals(new Square("Square 10"), board.getSquare(new Square("Square 4"), 6));
+        assertEquals(new RegularSquare("Square 10"), board.getSquare(new RegularSquare("Square 4"), 6));
 
         // exceeding 39
-        assertEquals(new Square("Go"), board.getSquare(new Square("39"), 1));
+        assertEquals(new GoSquare(), board.getSquare(new RegularSquare("39"), 1));
     }
 }

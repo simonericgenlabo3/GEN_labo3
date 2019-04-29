@@ -9,7 +9,7 @@ public class PlayerTest {
 
     @BeforeAll
     public static void playerCreationTest(){
-        Piece piece = new Piece("test", new Square("1"));
+        Piece piece = new Piece("test", new RegularSquare("1"));
         Die dice [] = {new Die(), new Die()};
         Board board = new Board();
         Player player = new Player("player one", piece, dice, board);
