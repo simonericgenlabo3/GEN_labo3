@@ -6,6 +6,7 @@ public class Player {
     private Piece piece;
     private Die[] dice;
     private Board board;
+    private int cash = 1500; // each player receives $1500 at the beginning of the game
 
     Player(String name, Piece piece, Die dice [], Board board){
         this.name = name;
