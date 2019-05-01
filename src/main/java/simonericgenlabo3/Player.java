@@ -6,6 +6,7 @@ public class Player {
     private Piece piece;
     private Die[] dice;
     private Board board;
+    private int cash = 1500; // each player receives $1500 at the beginning of the game
 
     Player(String name, Piece piece, Die dice [], Board board){
         this.name = name;
@@ -23,5 +24,17 @@ public class Player {
         Square oldLoc = piece.getLocation();
         Square newLoc = board.getSquare(oldLoc, fvTot);
         piece.setLocation(newLoc);
+    }
+
+    public int getNetWorth() {
+        return cash;
+    }
+
+    public void addCash(int cash) {
+        this.cash += cash;
+    }
+
+    public void reduceCash(int cash) {
+        this.cash -= cash;
     }
 }

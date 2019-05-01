@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Board {
     private String name;
-    private ArrayList<Square> squares = new ArrayList<>();
+    private ArrayList<Square> squares = new ArrayList<Square>();
 
     public Board() {
         // create squares
-        squares.add(new Square("Go"));
+        squares.add(new GoSquare());
 
         for(int i = 1; i < 40; ++i) {
-            squares.add(new Square("Square " + i));
+            squares.add(new RegularSquare("Square " + i));
         }
     }
 
