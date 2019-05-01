@@ -9,6 +9,8 @@ public abstract class Square {
         this.name = name;
     }
 
+    public abstract void landedOn(Player player);
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
