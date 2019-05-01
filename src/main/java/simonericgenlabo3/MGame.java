@@ -15,7 +15,7 @@ public class MGame {
         }
 
         for(int i = 0; i < nbOfPlayer; ++i) {
-            players.add(new Player(("Player" + i), new Piece(("Piece" + i), new Square("Go")), dice, board));
+            players.add(new Player(("Player" + i), new Piece(("Piece" + i), new GoSquare()), dice, board));
         }
     }
 

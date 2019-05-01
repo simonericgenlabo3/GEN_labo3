@@ -2,9 +2,12 @@ package simonericgenlabo3;
 
 import java.util.Objects;
 
-public class Square {
-
+public abstract class Square {
     private String name;
+
+    public Square(String name) {
+        this.name = name;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -17,10 +20,6 @@ public class Square {
     @Override
     public int hashCode() {
         return Objects.hash(name);
-    }
-
-    public Square(String name) {
-        this.name = name;
     }
 
     String getName() {
