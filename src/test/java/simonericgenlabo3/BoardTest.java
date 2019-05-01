@@ -22,9 +22,16 @@ public class BoardTest {
     public void boardCreateSquares(RepetitionInfo repetitionInfo) {
         Square square = board.getSquare(new GoSquare(), repetitionInfo.getCurrentRepetition());
 
-        // first square should be named "Go"
-        if(repetitionInfo.getCurrentRepetition() == 0) {
+        final int GO_SQUARE         = 0;
+        final int INCOME_TAX_SQUARE = 4;
+        final int GO_TO_JAIL_SQUARE = 30;
+
+        if(repetitionInfo.getCurrentRepetition() == GO_SQUARE) {
             assertEquals("Go", square.getName());
+        } else if(repetitionInfo.getCurrentRepetition() == INCOME_TAX_SQUARE) {
+            assertEquals("IncomeTax", square.getName());
+        } else if(repetitionInfo.getCurrentRepetition() == GO_TO_JAIL_SQUARE) {
+            assertEquals("GoToJail", square.getName());
         } else {
             assertEquals("Square " + repetitionInfo.getCurrentRepetition(), square.getName());
         }
@@ -32,7 +39,7 @@ public class BoardTest {
 
     @Test
     public void getSquareShouldReturnCorrectSquare() {
-        assertEquals(new RegularSquare("Square 10"), board.getSquare(new RegularSquare("Square 4"), 6));
+        assertEquals(new RegularSquare("Square 15"), board.getSquare(new RegularSquare("Square 5"), 10));
 
         // exceeding 39
         assertEquals(new GoSquare(), board.getSquare(new RegularSquare("39"), 1));
