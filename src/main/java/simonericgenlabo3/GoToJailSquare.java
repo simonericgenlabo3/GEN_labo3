@@ -7,6 +7,6 @@ public class GoToJailSquare extends Square {
 
     @Override
     public void landedOn(Player player) {
-
+        player.setLocation(new RegularSquare("Square 10"));
     }
 }

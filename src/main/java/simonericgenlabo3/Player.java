@@ -25,6 +25,7 @@ public class Player {
 
     public void setLocation(Square location) {
         piece.setLocation(location);
+        location.landedOn(this);
     }
 
     public int getNetWorth() {
