@@ -23,6 +23,10 @@ public class Player {
         piece.setLocation(newLoc);
     }
 
+    public void setLocation(Square location) {
+        piece.setLocation(location);
+    }
+
     public int getNetWorth() {
         return cash;
     }
