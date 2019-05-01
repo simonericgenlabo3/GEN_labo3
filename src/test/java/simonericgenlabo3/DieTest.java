@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -20,7 +21,7 @@ public class DieTest {
     public void faceValueMustBeBetween1and6 (){
         Die die = new Die();
 
-        assertTrue(((die.getFaceValue() < 7) && (die.getFaceValue() > 0)));
+        assertFalse(((die.getFaceValue() >= 7) && (die.getFaceValue() <= 0)));
         die.roll();
         assertTrue(((die.getFaceValue() < 7) && (die.getFaceValue() > 0)));
     }
