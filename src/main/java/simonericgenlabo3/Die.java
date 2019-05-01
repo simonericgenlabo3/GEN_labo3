@@ -6,7 +6,7 @@ public class Die {
 
     private int faceValue;
     private Random rand;
-    Die(){
+    public Die(){
         rand = new Random();
         roll();
     }
@@ -15,7 +15,7 @@ public class Die {
         return faceValue;
     }
 
-    void roll(){
+    public void roll(){
         faceValue = rand.nextInt(5);
         faceValue++;
     }

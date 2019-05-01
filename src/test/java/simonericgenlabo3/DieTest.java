@@ -12,7 +12,6 @@ public class DieTest {
 
     @BeforeAll
     public static void dieCreationTest(){
-        System.out.println("helo");
         Die die = new Die();
         assertNotNull(die);
     }

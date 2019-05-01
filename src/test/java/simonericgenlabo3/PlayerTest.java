@@ -15,8 +15,9 @@ public class PlayerTest {
     public static void playerCreationTest(){
         Piece piece = new Piece("test", new RegularSquare("1"));
         Die dice [] = {new Die(), new Die()};
+        Cup cup = new Cup(dice);
         Board board = new Board();
-        Player player = new Player("player one", piece, dice, board);
+        Player player = new Player("player one", piece, cup, board);
         assertNotNull(player);
     }
 
@@ -47,12 +48,11 @@ public class PlayerTest {
     @Test
     public void playerShouldMoveAfterATurn() {
         Piece piece = new Piece("test", new GoSquare());
-        Die die1 = mock(Die.class);
-        when(die1.getFaceValue()).thenReturn(3);
-        Die dice [] = {die1, die1};
+        Cup cup = mock(Cup.class);
+        when(cup.getTotal()).thenReturn(3);
         Board board = new Board();
-        Player player = new Player("player one", piece, dice, board);
+        Player player = new Player("player one", piece, cup, board);
         player.takeTurn();
-        assertEquals("Square 6", piece.getLocation().getName());
+        assertEquals("Square 3", piece.getLocation().getName());
     }
 }
